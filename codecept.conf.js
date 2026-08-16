@@ -15,6 +15,9 @@ exports.config = {
       url: 'http://localhost:8080',
       show: false,
       windowSize: '1200x900',
+      chrome: {
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      },
     },
   },
   include: {

@@ -4,9 +4,9 @@ Feature('Unfavorite Restaurant');
 
 Before(({ I }) => {
   I.amOnPage('/');
+  I.waitForResponse('https://restaurant-api.dicoding.dev/list', 10);
   I.waitForElement('restaurant-item');
   I.seeElement('restaurant-item');
-  I.waitForResponse('https://restaurant-api.dicoding.dev/list');
 
   I.click(locate('restaurant-item').first());
   I.waitForElement('#favoriteButton');
