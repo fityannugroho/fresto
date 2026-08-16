@@ -1,5 +1,19 @@
 // Karma configuration
 // Generated on Fri Jul 03 2020 20:15:52 GMT+0700 (Western Indonesia Time)
+
+// Resolve a Chrome binary for headless testing. There is no system Chrome on CI,
+// so fall back to the Chrome bundled with puppeteer (downloaded at install time).
+// puppeteer 25+ exposes executablePath() as a promise, hence the child process.
+if (!process.env.CHROME_BIN) {
+  try {
+    const { execFileSync } = require('child_process');
+    const script = "require('puppeteer').executablePath().then((p) => process.stdout.write(p))";
+    process.env.CHROME_BIN = execFileSync(process.execPath, ['-e', script], { encoding: 'utf8' });
+  } catch (err) {
+    console.warn('karma: could not resolve Chrome via puppeteer:', err.message);
+  }
+}
+
 module.exports = (config) => {
   config.set({
 
