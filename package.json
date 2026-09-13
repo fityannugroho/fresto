@@ -17,7 +17,7 @@
   "license": "ISC",
   "engines": {
     "node": ">=22.15.0",
-    "pnpm": ">=10"
+    "pnpm": ">=11"
   },
   "devDependencies": {
     "@babel/core": "^7.29.7",
@@ -60,20 +60,5 @@
     "idb": "^8.0.3",
     "lazysizes": "^5.3.2",
     "regenerator-runtime": "^0.14.1"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "puppeteer"
-    ],
-    "overrides": {
-      "@codeceptjs/detox-helper": "npm:empty-npm-package@1.0.0",
-      "axios": "^1.19.0",
-      "joi": "^18.2.3",
-      "uuid": "^11.1.1",
-      "diff": "^8.0.4",
-      "serialize-javascript": "^7.1.1",
-      "ws": "^8.21.3",
-      "@xmldom/xmldom": "0.9.12"
-    }
   }
 }
