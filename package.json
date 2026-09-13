@@ -13,7 +13,6 @@
     "e2e": "codeceptjs run --steps"
   },
   "keywords": [],
-  "packageManager": "pnpm@10.18.3",
   "author": "fityannugroho <fityannugroho@gmail.com>",
   "license": "ISC",
   "engines": {
