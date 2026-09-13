@@ -3,6 +3,7 @@
   "version": "0.4.2",
   "description": "the restaurant web apps",
   "main": "index.js",
+  "packageManager": "pnpm@11.27.0",
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "start": "node server.js",
