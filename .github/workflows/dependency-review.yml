@@ -18,3 +18,9 @@ jobs:
         uses: actions/checkout@v4
       - name: 'Dependency Review'
         uses: actions/dependency-review-action@v5
+        with:
+          # Scoped 2026-09-14, approved by repo owner.
+          # GHSA-5v7r-6r5c-r473 (file-type): dev-only via webpack-pwa-manifest>jimp,
+          # ASF parser unreachable on local icons only; real fix in Vite migration via vite-plugin-pwa.
+          # GHSA-x565-32qp-m3vf (phin): no patched release published.
+          allow-ghsas: GHSA-5v7r-6r5c-r473, GHSA-x565-32qp-m3vf
