@@ -6,16 +6,18 @@
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "start": "node server.js",
-    "build": "npm run resize-image && webpack --config webpack.prod.js",
+    "build": "pnpm run resize-image && webpack --config webpack.prod.js",
     "resize-image": "node src/scripts/resize-image.js",
     "test": "karma start --single-run",
     "e2e": "codeceptjs run --steps"
   },
   "keywords": [],
+  "packageManager": "pnpm@10.18.3",
   "author": "fityannugroho <fityannugroho@gmail.com>",
   "license": "ISC",
   "engines": {
-    "node": ">=22.15.0"
+    "node": ">=22.15.0",
+    "pnpm": ">=10"
   },
   "devDependencies": {
     "@babel/core": "^7.29.7",
@@ -59,19 +61,18 @@
     "lazysizes": "^5.3.2",
     "regenerator-runtime": "^0.14.1"
   },
-  "overrides": {
-    "@codeceptjs/detox-helper": "npm:empty-npm-package@1.0.0",
-    "axios": "^1.19.0",
-    "joi": "^18.2.3",
-    "uuid": "^11.1.1",
-    "diff": "^8.0.4",
-    "serialize-javascript": "^7.1.1",
-    "ws": "^8.21.3"
-  },
-  "trustedDependencies": [
-    "puppeteer"
-  ],
-  "allowScripts": {
-    "puppeteer@25.10.0": true
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "puppeteer"
+    ],
+    "overrides": {
+      "@codeceptjs/detox-helper": "npm:empty-npm-package@1.0.0",
+      "axios": "^1.19.0",
+      "joi": "^18.2.3",
+      "uuid": "^11.1.1",
+      "diff": "^8.0.4",
+      "serialize-javascript": "^7.1.1",
+      "ws": "^8.21.3"
+    }
   }
 }
