@@ -87,7 +87,8 @@ module.exports = (config) => {
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     // ChromeHeadlessNoSandbox: running as root (containers/CI) needs
     // --no-sandbox, otherwise Chrome refuses to start.
-    browsers: ['ChromeHeadlessNoSandbox'],
+    // Only use it on CI; locally keep plain ChromeHeadless.
+    browsers: [process.env.CI ? 'ChromeHeadlessNoSandbox' : 'ChromeHeadless'],
 
     customLaunchers: {
       ChromeHeadlessNoSandbox: {

@@ -12,6 +12,7 @@ overrides:
   diff: ^8.0.4
   serialize-javascript: ^7.1.1
   ws: ^8.21.3
+  '@xmldom/xmldom': 0.9.11
 
 importers:
 
@@ -1604,8 +1605,8 @@ packages:
   '@webassemblyjs/wast-printer@1.14.1':
     resolution: {integrity: sha512-kPSSXE6De1XOR820C90RIo2ogvZG+c3KiHzqUoO/F34Y2shGzesfqv7o57xrxovZJH/MetF5UjroJ/R/3isoiw==}
 
-  '@xmldom/xmldom@0.9.10':
-    resolution: {integrity: sha512-A9gOqLdi6cV4ibazAjcQufGj0B1y/vDqYrcuP6d/6x8P27gRS8643Dj9o1dEKtB6O7fwxb2FgBmJS2mX7gpvdw==}
+  '@xmldom/xmldom@0.9.11':
+    resolution: {integrity: sha512-tW8bcK3hsG0/uqSnNz6TK4BkcuZSezoU7DlnYssILmZDktPnSHHuDJJFM0AJv+13gz2r0iGdrj6qqKeUnxXEDg==}
     engines: {node: '>=14.6'}
     deprecated: this version has critical issues, please update to the latest version
 
@@ -6676,7 +6677,7 @@ snapshots:
       '@webassemblyjs/ast': 1.14.1
       '@xtuc/long': 4.2.2
 
-  '@xmldom/xmldom@0.9.10': {}
+  '@xmldom/xmldom@0.9.11': {}
 
   '@xtuc/ieee754@1.2.0': {}
 
@@ -7143,7 +7144,7 @@ snapshots:
       '@cucumber/cucumber-expressions': 19.0.1
       '@cucumber/gherkin': 39.0.0
       '@cucumber/messages': 32.3.1
-      '@xmldom/xmldom': 0.9.10
+      '@xmldom/xmldom': 0.9.11
       acorn: 8.16.0
       arrify: 3.0.0
       axios: 1.20.0

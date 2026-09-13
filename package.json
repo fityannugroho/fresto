@@ -9,6 +9,7 @@
     "build": "pnpm run resize-image && webpack --config webpack.prod.js",
     "resize-image": "node src/scripts/resize-image.js",
     "test": "karma start --single-run",
+    "preinstall": "npx only-allow pnpm",
     "e2e": "codeceptjs run --steps"
   },
   "keywords": [],
@@ -72,7 +73,8 @@
       "uuid": "^11.1.1",
       "diff": "^8.0.4",
       "serialize-javascript": "^7.1.1",
-      "ws": "^8.21.3"
+      "ws": "^8.21.3",
+      "@xmldom/xmldom": "0.9.11"
     }
   }
 }
