@@ -24,6 +24,17 @@ module.exports = (config) => {
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['jasmine', 'webpack'],
 
+    // Explicit plugin list. Required under pnpm strict layout:
+    // karma resolves plugins relative to its own dir inside the
+    // .pnpm store, so autoload (karma-*) fails to find them.
+    plugins: [
+      'karma-jasmine',
+      'karma-webpack',
+      'karma-sourcemap-loader',
+      'karma-chrome-launcher',
+      'karma-firefox-launcher',
+    ],
+
     // list of files / patterns to load in the browser
     files: [
       'specs/**/*Spec.js',
