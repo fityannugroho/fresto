@@ -1,0 +1,22 @@
+# pnpm workspace settings (pnpm v11+).
+# Overrides and build approvals moved here from the removed `pnpm` field in
+# package.json, which pnpm >=11 no longer reads.
+# Docs: https://pnpm.io/settings
+
+# Deactivate the v11+ default supply-chain delay so installs and CI do not
+# fail on freshly published transitive versions. Re-enable deliberately later
+# (minimumReleaseAge: 1440) once the graph is stable.
+minimumReleaseAge: 0
+
+allowBuilds:
+  puppeteer: true
+
+overrides:
+  "@codeceptjs/detox-helper": "npm:empty-npm-package@1.0.0"
+  axios: ^1.19.0
+  joi: ^18.2.3
+  uuid: ^11.1.1
+  diff: ^8.0.4
+  serialize-javascript: ^7.1.1
+  ws: ^8.21.3
+  "@xmldom/xmldom": 0.9.12

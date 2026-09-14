@@ -24,6 +24,17 @@ module.exports = (config) => {
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['jasmine', 'webpack'],
 
+    // Explicit plugin list. Required under pnpm strict layout:
+    // karma resolves plugins relative to its own dir inside the
+    // .pnpm store, so autoload (karma-*) fails to find them.
+    plugins: [
+      'karma-jasmine',
+      'karma-webpack',
+      'karma-sourcemap-loader',
+      'karma-chrome-launcher',
+      'karma-firefox-launcher',
+    ],
+
     // list of files / patterns to load in the browser
     files: [
       'specs/**/*Spec.js',
@@ -74,7 +85,17 @@ module.exports = (config) => {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['ChromeHeadless'],
+    // ChromeHeadlessNoSandbox: running as root (containers/CI) needs
+    // --no-sandbox, otherwise Chrome refuses to start.
+    // Only use it on CI; locally keep plain ChromeHeadless.
+    browsers: [process.env.CI ? 'ChromeHeadlessNoSandbox' : 'ChromeHeadless'],
+
+    customLaunchers: {
+      ChromeHeadlessNoSandbox: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox', '--disable-gpu', '--disable-dev-shm-usage'],
+      },
+    },
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
