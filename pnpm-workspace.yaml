@@ -32,8 +32,6 @@ overrides:
   fast-uri: ^3.1.8
   # GHSA-3pph-fpjx-jg34: multer <2.4.0 DoS on aborted uploads (codeceptjs).
   multer: ^2.4.0
-  # GHSA-5v7r-6r5c-r473: file-type <21.3.1 ASF parser infinite loop (webpack-pwa-manifest > jimp).
-  file-type: ^21.3.1
   # GHSA-qhr7-859c-m2p7 / GHSA-6j4f-fj2g-mc7p / GHSA-q2hr-2g5m-vwhr:
   # brace-expansion DoS (eslint/minimatch, codeceptjs/glob, workbox). Pin each
   # major line to a patched release; parents declaring ^4 are moved onto the 5.x line.
