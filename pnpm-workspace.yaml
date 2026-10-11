@@ -3,10 +3,7 @@
 # package.json, which pnpm >=11 no longer reads.
 # Docs: https://pnpm.io/settings
 
-# Deactivate the v11+ default supply-chain delay so installs and CI do not
-# fail on freshly published transitive versions. Re-enable deliberately later
-# (minimumReleaseAge: 1440) once the graph is stable.
-minimumReleaseAge: 0
+# The 24h minimum release age supply-chain policy is re-enabled now that the dependency graph is stable.
 
 allowBuilds:
   puppeteer: true
@@ -17,6 +14,7 @@ overrides:
   joi: ^18.2.3
   uuid: ^11.1.1
   diff: ^8.0.4
-  serialize-javascript: ^7.1.1
+  # GHSA-gfhx-hw2g-v5hg: 7.1.1 escapes `</script>` in serialized function bodies.
+  serialize-javascript: ^7.1.2
   ws: ^8.21.3
   "@xmldom/xmldom": 0.9.12
